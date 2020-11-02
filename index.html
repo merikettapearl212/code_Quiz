@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Code Quiz</title>
     <link rel="stylesheet" href="./Develop/style.css" />
 </head>
-<body>
-    <h1>Hello World!</h1>
-    <script src="./Develop/script.js">
 
-    </script>
+<body>
+    <header>
+        <a href="" id="view-highscores">View Highscores</a>
+        <div id="timer">Timer:</div>
+    </header>
+
+    <main class="main-container">
+        <section>
+            <h1>Coding Quiz Challenge!</h1>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score-time by ten seconds!</p>
+            <div id="main-btn">
+                <button id="start-btn">Start Quiz</button>
+            </div>
+        </section>
+        
+        <section class="question-container">
+            <h2 class="question">Question:</h2>
+            
+            <div class="question-area">
+                <button></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </section>
+    </main>
+
+    <script src="./Develop/script.js"></script>
 </body>
 </html>

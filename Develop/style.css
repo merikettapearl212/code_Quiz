@@ -1,0 +1,9 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    display: inline;
+    color: purple;
+    float: left;
+}
+
