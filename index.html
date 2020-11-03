@@ -6,45 +6,38 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./Develop/style.css" />
 </head>
-
-
-    <!--View highscores link and timer that starts @75 sec
-    <header>
-        <a href="#" id="view-highscores">View Highscores</a>
-        <div id="timer">Timer:<span>75</span></div>
-    </header>-->
-    <!--Centered main card-->
 <body>
+    <!--Timer + scores div-->
+    <div id="timer">time: 75
+    <a href="#" id="view-highscores">View Highscores</a>
+    </div>
+
+    <!--Quiz section div-->
+    <div id="quiz-section">
+    <!--Starter page-->
     <div class="main-container">
-        <div class="top">
-            <h1>Coding Quiz Challenge!</h1>
-        </div>
-        <div class="middle">
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score-time by ten seconds!</p>
-            <a href="#" class="startbtn">Start Quiz</a>
+        <h1>Coding Quiz Challenge!</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score-time by ten seconds!</p>
+    </div>
+    <!--Button-->
+    <button id="start-btn">Start Quiz</button>
+
+    <!--Questions-->
+    <div id="questions"></div>
+        <ul id="choices">
+            <button id="choice1"></button>
+            <button id="choice2"></button>
+            <button id="choice3"></button>
+            <button id="choice4"></button>
+        </ul>
             
-        </div>
+    </div>
+
         
         
     
     </div>
-        <!--Question and answer with 4 button options
-        <section class="question-container">
-            <h2 class="question">Question:</h2>
-            
-            <div class="question-area">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-            </div>
-        </section>-->
-        <!--Input area for initials and that logs score -->
         
-        <!--Highscores area that is also linked to main page
-        <section class="highscore-container">
-            <h2>High Scores:</h2>
-        </section>-->
         
     
 
