@@ -6,40 +6,27 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./Develop/style.css" />
 </head>
+
 <body>
-    <!--Timer + scores div-->
-    <div id="timer">time: 75
-    <a href="#" id="view-highscores">View Highscores</a>
-    </div>
-
-    <!--Quiz section div-->
-    <div id="quiz-section">
-    <!--Starter page-->
-    <div class="main-container">
-        <h1>Coding Quiz Challenge!</h1>
-        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score-time by ten seconds!</p>
-    </div>
-    <!--Button-->
-    <button id="start-btn">Start Quiz</button>
-
-    <!--Questions-->
-    <div id="questions"></div>
-        <ul id="choices">
-            <button id="choice1"></button>
-            <button id="choice2"></button>
-            <button id="choice3"></button>
-            <button id="choice4"></button>
-        </ul>
-            
-    </div>
-
-        
-        
-    
-    </div>
-        
-        
-    
+    <div class="wrapper">
+        <header>
+            <a href="#" id="view-highscores">View Highscores</a>
+            <div id="timer">Timer:<span>75</span></div>
+        </header>
+        <div class="card">
+          <div class="card-header">
+            <h2>Coding Quiz Challenge!</h2>
+          </div>
+          <div class="card-body">
+            <div>
+                Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score-time by ten seconds!
+            </div>
+          </div>
+          <div class="card-footer">
+            <button id="generate" class="btn">Generate Password</button>
+          </div>
+        </div>
+      </div>
 
     <script src="./Develop/script.js"></script>
 </body>
