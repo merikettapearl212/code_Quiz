@@ -15,14 +15,12 @@ function setTime() {
     }
   }, 1000);
 }
+//When Start Quiz button is clicked, timer starts
 document.getElementById("start-quiz").addEventListener("click", setTime);
 
+//When Start Quiz button is clicked, questions appear w/ answer options
 
-//Var currentScore/timeLeft
-//append card-header to question prompts
-//append card-body to answer option buttons
-//append card-footer to wrong/correct alert
-//Questions
+//Array of questions and options 
 var q1 = {
     qu: "What is...",
     op: "a",
@@ -76,5 +74,10 @@ var q6 = {
     op: "d",
     an: "c",
 }
- 
+//When option clicked alert if Wrong/Correct before moving onto next question
+
+//append card-header to question prompts
+//append card-body to answer option buttons
+//append card-footer to wrong/correct alert
+//Questions
 
