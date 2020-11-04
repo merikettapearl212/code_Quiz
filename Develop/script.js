@@ -1,31 +1,22 @@
-var startBtn = document.querySelector("#startButton");
-var timeEl = document.querySelector(".timer"); 
 
-timeEl.textContent = "Timer: 75";
+// Set time variables
+var secondsLeft = 75;
 
-var secondsLeft = 60;
+var timerEl = document.getElementById("timer");
 
-function startTime() {
+// Set time function
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timerEl.textContent = "Time: " + secondsLeft;
 
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-  
-      if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        sendMessage();
-      }
-  
-    }, 1000);
-  }
-  
-  function sendMessage() {
-    timeEl.textContent = "Time is up!";
-  
-  }
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+}
+document.getElementById("start-quiz").addEventListener("click", setTime);
 
-
-//CLick event, event listener
-//startBtn.addEventListener("click", startQuiz);
 
 //Var currentScore/timeLeft
 //append card-header to question prompts
