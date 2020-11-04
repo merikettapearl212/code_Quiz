@@ -1,8 +1,3 @@
-# code_Quiz
-homework to make a quiz
-first terminal input to read me
-
-# 04 Web APIs: Code Quiz
 
 ## Your Task
 

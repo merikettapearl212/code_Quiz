@@ -1,6 +1,35 @@
-//Create Elements
-//Declare variabls
-//Onclick for button
+//var startBtn = document.querySelector("#startButton");
+
+var timerEl = document.querySelector("#timer");
+
+var secondsLeft = 75;
+
+function setTime() {
+
+    var callback = function() {
+        secondsLeft--;
+        timerEl = secondsLeft;
+
+        if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+
+    }
+};
+
+
+var timerInterval = setInterval(callback, 1000);
+
+}
+setTime();
+
+
+//CLick event, event listener
+//startBtn.addEventListener("click", startQuiz);
+
+//Var currentScore/timeLeft
+//append card-header to question prompts
+//append card-body to answer option buttons
+//append card-footer to wrong/correct alert
 //Questions
 var q1 = {
     qu: "What is...",
