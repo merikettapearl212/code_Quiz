@@ -1,26 +1,27 @@
-//var startBtn = document.querySelector("#startButton");
+var startBtn = document.querySelector("#startButton");
+var timeEl = document.querySelector(".timer"); 
 
-var timerEl = document.querySelector("#timer");
+timeEl.textContent = "Timer: 75";
 
-var secondsLeft = 75;
+var secondsLeft = 60;
 
-function setTime() {
+function startTime() {
 
-    var callback = function() {
-        secondsLeft--;
-        timerEl = secondsLeft;
-
-        if(secondsLeft === 0) {
-            clearInterval(timerInterval);
-
-    }
-};
-
-
-var timerInterval = setInterval(callback, 1000);
-
-}
-setTime();
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+  
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        sendMessage();
+      }
+  
+    }, 1000);
+  }
+  
+  function sendMessage() {
+    timeEl.textContent = "Time is up!";
+  
+  }
 
 
 //CLick event, event listener
