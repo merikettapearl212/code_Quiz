@@ -21,7 +21,7 @@ document.getElementById("start-quiz").addEventListener("click", setTime);
 //When Start Quiz button is clicked, questions appear w/ answer options
 
 //Array of questions and options 
-var q1 = {
+var questions = {
     qu: "What is...",
     op: "a",
     op: "b",
@@ -74,6 +74,7 @@ var q6 = {
     op: "d",
     an: "c",
 }
+
 //When option clicked alert if Wrong/Correct before moving onto next question
 
 //append card-header to question prompts
