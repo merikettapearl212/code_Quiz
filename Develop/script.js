@@ -21,59 +21,30 @@ document.getElementById("start-quiz").addEventListener("click", setTime);
 //When Start Quiz button is clicked, questions appear w/ answer options
 
 //Array of questions and options 
-var questions = {
-    qu: "What is...",
-    op: "a",
-    op: "b",
-    op: "c",
-    op: "d",
-    an: "d",
+var questionList = [
+  {
+  question: "Inside which HTML element do we put the JavaScript?",
+    options: ["<script>", "<javascript>", "<js>", "<scripting>"],
+    answer: 1
+},
+{
+  question: "How do you create a function in JavaScript?",
+    options: ["function = myFunction()", "function.myFunction()", "function myFunction()", "function : myFunction()"],
+    answer: 0
+},
+{
+  question: "How do you call a function named myFunction?",
+    options: ["call myFunction()", "myFunction.()", "myFunction()", "call myFunction"],
+    answer: 2
+},
+{
+  question: "How to write an IF statement in JavaScript?",
+    options: ["if i = 0", "if (i = 0)", "if i == 0 then", "none of the above"],
+    answer: 0
 }
+]
 
-var q2 = {
-    qu: "What is...",
-    op: "a",
-    op: "b",
-    op: "c",
-    op: "d",
-    an: "c",
-}
 
-var q3 = {
-    qu: "What is...",
-    op: "a",
-    op: "b",
-    op: "c",
-    op: "d",
-    an: "a",
-}
-
-var q4 = {
-    qu: "What is...",
-    op: "a",
-    op: "b",
-    op: "c",
-    op: "d",
-    an: "b",
-}
-
-var q5 = {
-    qu: "What is...",
-    op: "a",
-    op: "b",
-    op: "c",
-    op: "d",
-    an: "d",
-}
-
-var q6 = {
-    qu: "What is...",
-    op: "a",
-    op: "b",
-    op: "c",
-    op: "d",
-    an: "c",
-}
 
 //When option clicked alert if Wrong/Correct before moving onto next question
 
