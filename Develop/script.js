@@ -53,3 +53,4 @@ var questionList = [
 //append card-footer to wrong/correct alert
 //Highscore input
 
+
