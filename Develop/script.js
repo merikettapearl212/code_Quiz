@@ -51,5 +51,5 @@ var questionList = [
 //append card-header to question prompts
 //append card-body to answer option buttons
 //append card-footer to wrong/correct alert
-//Questions
+//Highscore input
 
