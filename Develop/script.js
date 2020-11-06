@@ -1,4 +1,6 @@
-
+var promptQuestion = document.getElementById(".card-prompt")
+var buttonOptions = document.getElementById(".card-options")
+//hide card-body
 // Set time variables
 var secondsLeft = 75;
 
@@ -18,7 +20,6 @@ function setTime() {
 //When Start Quiz button is clicked, timer starts
 document.getElementById("start-quiz").addEventListener("click", setTime);
 
-//When Start Quiz button is clicked, questions appear w/ answer options
 
 //Array of questions and options 
 var questionList = [
@@ -44,6 +45,17 @@ var questionList = [
 }
 ]
 
+function startQuiz() {
+
+}
+//When Start Quiz button is clicked, questions appear w/ answer options
+function qustionsShow() {
+
+}
+
+function submitScore() {
+
+}
 
 
 //When option clicked alert if Wrong/Correct before moving onto next question

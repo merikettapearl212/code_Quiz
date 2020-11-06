@@ -28,7 +28,7 @@ h2 {
   max-width: 700px;
   padding: 10px;
 }
-.card-header {
+.card-prompt {
   font-size: 30px;
 }
 .card-body {
@@ -36,7 +36,7 @@ h2 {
   text-align: center;
 }
 
-.card-footer {
+.card-options {
   text-align: center;
 }
 
