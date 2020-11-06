@@ -10,6 +10,7 @@ The following animation demonstrates the application functionality we are trying
 ![code quiz](./Develop/04-web-apis-homework-demo.gif)
 
 ## Screenshot of live page:
+![Screenshot](./Develop/code_Quizscreenshot.png)
 
 ## Links:
 To Repo:
