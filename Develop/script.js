@@ -1,8 +1,9 @@
-var promptQuestion = document.getElementById(".card-prompt")
-var buttonOptions = document.getElementById(".card-options")
-//hide card-body
+
+//document.getElementById(".btn").appendchild(answerBtn)?
+
 // Set time variables
 var secondsLeft = 75;
+
 
 var timerEl = document.getElementById("timer");
 
@@ -45,17 +46,31 @@ var questionList = [
 }
 ]
 
-function startQuiz() {
+var startButton = document.getElementById('start-quiz')
+var questionContainerEl = document.getElementById('answer-buttons')
 
+
+
+startButton.addEventListener('click', startGame)
+
+function startGame() {
+  console.log('started')
+  startButton.classList.add('hide')
+  questionContainerEl.classList.remove('hide')
+
+  
+  
 }
+//function startQuiz() {
+ // start.style.display = "none";
+ // questionRun();
+//}
+
 //When Start Quiz button is clicked, questions appear w/ answer options
-function qustionsShow() {
+//function questionRun() {
+ // var questionList = questionList.length -1;}
 
-}
-
-function submitScore() {
-
-}
+//function submitScore() {}
 
 
 //When option clicked alert if Wrong/Correct before moving onto next question

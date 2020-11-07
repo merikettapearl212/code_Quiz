@@ -30,17 +30,21 @@ h2 {
 }
 .card-prompt {
   font-size: 30px;
+  text-align: center;
 }
 .card-body {
   padding-bottom: 20px;
   text-align: center;
+  
 }
-
-.card-options {
+.card-start {
   text-align: center;
 }
 
-
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
 .btn {
   border: none;
   background-color: purple;
@@ -49,9 +53,15 @@ h2 {
   display: inline-block;
   font-size: 25px;
   margin: 10px;
-  padding: 12px;
+  padding: 15px;
   text-align: center;
   cursor: pointer;
+  outline: none;
+  
+}
+
+.hide {
+  display: none;
 }
 
 @media (max-width: 690px) {
