@@ -47,8 +47,8 @@ var questionList = [
 ]
 
 var startButton = document.getElementById('start-quiz')
-var questionContainerEl = document.getElementById('answer-buttons')
-
+var answersContainerEl = document.getElementById('answer-buttons')
+var startPrompt = document.getElementById('start-instructions')
 
 
 startButton.addEventListener('click', startGame)
@@ -56,7 +56,8 @@ startButton.addEventListener('click', startGame)
 function startGame() {
   console.log('started')
   startButton.classList.add('hide')
-  questionContainerEl.classList.remove('hide')
+  answersContainerEl.classList.remove('hide')
+  startPrompt.classList.add('hide')
 
   
   
