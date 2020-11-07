@@ -28,7 +28,7 @@ h2 {
   max-width: 700px;
   padding: 10px;
 }
-#card-title {
+#card-title, .question-choice {
   font-size: 30px;
   text-align: center;
 }

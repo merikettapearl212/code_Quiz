@@ -25,22 +25,22 @@ document.getElementById("start-quiz").addEventListener("click", setTime);
 //Array of questions and options 
 let questionList = [
   {
-  question: "Inside which HTML element do we put the JavaScript?",
+  questions: "Inside which HTML element do we put the JavaScript?",
     options: ["<script>", "<javascript>", "<js>", "<scripting>"],
     answer: 1
 },
 {
-  question: "How do you create a function in JavaScript?",
+  questions: "How do you create a function in JavaScript?",
     options: ["function = myFunction()", "function.myFunction()", "function myFunction()", "function : myFunction()"],
     answer: 0
 },
 {
-  question: "How do you call a function named myFunction?",
+  questions: "How do you call a function named myFunction?",
     options: ["call myFunction()", "myFunction.()", "myFunction()", "call myFunction"],
     answer: 2
 },
 {
-  question: "How to write an IF statement in JavaScript?",
+  questions: "How to write an IF statement in JavaScript?",
     options: ["if i = 0", "if (i = 0)", "if i == 0 then", "none of the above"],
     answer: 0
 }
@@ -49,8 +49,10 @@ let questionList = [
 var startButton = document.getElementById('start-quiz')
 var answersContainerEl = document.getElementById('answer-buttons')
 var startPrompt = document.getElementById('start-instructions')
-var questionContainer =document.getElementById('card-title')
+var startTitle =document.getElementById('card-title')
 var questionEl = document.getElementById('title-container')
+var optionChoices = document.getElementById('.btn-choices')
+var questionEl = document.getElementById('.question')
 
 startButton.addEventListener('click', startGame)
 
@@ -59,9 +61,25 @@ function startGame() {
   startButton.classList.add('hide')
   answersContainerEl.classList.remove('hide')
   startPrompt.classList.add('hide')
-  questionContainer.classList.add('hide')
+  startTitle.classList.add('hide')
   //getQuestions();
 }
+
+/*function getQuestions() {
+  questionEl
+}
+
+
+/*for (i = 0; i < optionChoices.length; i++) {
+  optionChoices[i].set
+}
+for (i = 0; i < optionChoices.length; i++) {
+  optionChoices[i].textContent = questionList[questionNumber].answer[i];
+}
+  questionEl.textContent = questionList[questionNumber].questions;
+  questionNumber++;
+
+
 
 //function getQuestions()
 /*const lastQuestion = questionList.length -1;
