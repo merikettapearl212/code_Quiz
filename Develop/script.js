@@ -23,7 +23,7 @@ document.getElementById("start-quiz").addEventListener("click", setTime);
 
 
 //Array of questions and options 
-var questionList = [
+let questionList = [
   {
   question: "Inside which HTML element do we put the JavaScript?",
     options: ["<script>", "<javascript>", "<js>", "<scripting>"],
@@ -59,8 +59,17 @@ function startGame() {
   startButton.classList.add('hide')
   answersContainerEl.classList.remove('hide')
   startPrompt.classList.add('hide')
+  questionContainer.classList.add('hide')
   
 }
+/*const lastQuestion = questionList.length -1;
+let runningQuestion = 0;
+
+function renderQuestion(){
+  let q = questionList[runningQuestion];
+  question.innerHtml = "<div class='question'>"+ q.question +"</div>";
+}
+renderQuestion();
 
 /*var beginQuestions = function() {
   event.preventDefault;
