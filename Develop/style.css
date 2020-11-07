@@ -22,17 +22,17 @@ h2 {
   padding-top: 0px;
 }
 
-.questions-container {
+.card-body {
   font-size: 20px;
   margin: auto;
   max-width: 700px;
   padding: 10px;
 }
-#card-prompt {
+#card-title {
   font-size: 30px;
   text-align: center;
 }
-.card-body {
+.instructions-container {
   padding-bottom: 20px;
   text-align: center;
   
@@ -45,7 +45,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, auto);
 }
-.btn {
+.btn-style {
   border: none;
   background-color: purple;
   border-radius: 25px;

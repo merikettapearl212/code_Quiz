@@ -49,8 +49,8 @@ let questionList = [
 var startButton = document.getElementById('start-quiz')
 var answersContainerEl = document.getElementById('answer-buttons')
 var startPrompt = document.getElementById('start-instructions')
-var questionContainer =document.getElementById('card-prompt')
-var questionEl = document.getElementById('questions-container')
+var questionContainer =document.getElementById('card-title')
+var questionEl = document.getElementById('title-container')
 
 startButton.addEventListener('click', startGame)
 
@@ -60,8 +60,10 @@ function startGame() {
   answersContainerEl.classList.remove('hide')
   startPrompt.classList.add('hide')
   questionContainer.classList.add('hide')
-  
+  //getQuestions();
 }
+
+//function getQuestions()
 /*const lastQuestion = questionList.length -1;
 let runningQuestion = 0;
 

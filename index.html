@@ -13,29 +13,28 @@
             <a href="#" class="highScore">View Highscores</a>
             <div id="timer">Time: 75</div>
         </header>
-        <div class="questions-container">
-          <div id="card-prompt">
+        <div class="card-body">
+          <div id="card-title">
             <h2>Coding Quiz Challenge!</h2>
           </div>
-          <div class="card-body">
-            
-            <div id="start-instructions">
+          <div class="instructions-container">
+          <div id="start-instructions">
                 Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score-time by ten seconds!
             </div>
+          </div>
+          <div class="card-start">
+            <button id="start-quiz" class="btn-style">Start Quiz</button>
+          </div>
+
             <div id="answer-buttons" class="hide">
               <div class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+                <button class="btn-style" class="btn-choices"></button>
+                <button class="btn-style" class="btn-choices"></button>
+                <button class="btn-style" class="btn-choices"></button>
+                <button class="btn-style" class="btn-choices"></button>
               </div>
             </div>
-              
-          </div>
-          
-          <div class="card-start">
-            <button id="start-quiz" class="btn">Start Quiz</button>
-          </div>
+    
         </div>
       </div>
 
