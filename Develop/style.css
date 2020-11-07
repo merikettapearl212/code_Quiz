@@ -22,13 +22,13 @@ h2 {
   padding-top: 0px;
 }
 
-.card {
+.questions-container {
   font-size: 20px;
   margin: auto;
   max-width: 700px;
   padding: 10px;
 }
-.card-prompt {
+#card-prompt {
   font-size: 30px;
   text-align: center;
 }

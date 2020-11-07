@@ -49,7 +49,8 @@ var questionList = [
 var startButton = document.getElementById('start-quiz')
 var answersContainerEl = document.getElementById('answer-buttons')
 var startPrompt = document.getElementById('start-instructions')
-
+var questionContainer =document.getElementById('card-prompt')
+var questionEl = document.getElementById('questions-container')
 
 startButton.addEventListener('click', startGame)
 
@@ -58,10 +59,29 @@ function startGame() {
   startButton.classList.add('hide')
   answersContainerEl.classList.remove('hide')
   startPrompt.classList.add('hide')
-
-  
   
 }
+
+/*var beginQuestions = function() {
+  event.preventDefault;
+  questionContainer.style.display = "block";
+  questionEl.textContent = questionList[i]["question"];
+
+  if (i >=questionList.length -1) {
+
+  }
+
+}
+var start
+/*var element = document.getElementById('something');
+
+// removing everything inside the node
+while (element.firstChild) {
+    element.removeChild(element.firstChild);
+}
+
+// appending new text node
+element.appendChild(document.createTextNode('new text'));
 //function startQuiz() {
  // start.style.display = "none";
  // questionRun();
@@ -82,3 +102,4 @@ function startGame() {
 //Highscore input
 
 
+*/
