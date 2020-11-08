@@ -21,6 +21,9 @@ function setTime() {
 //When Start Quiz button is clicked, timer starts
 document.getElementById("start-quiz").addEventListener("click", setTime);
 
+var questionEl = document.getElementById('question')
+var answerButtonsEl = document.getElementById('answer-buttons')
+
 
 //Array of questions and options 
 let questionList = [
@@ -47,28 +50,57 @@ let questionList = [
 ]
 
 var startButton = document.getElementById('start-quiz')
-var answersContainerEl = document.getElementById('answer-buttons')
 var startPrompt = document.getElementById('start-instructions')
-var startTitle =document.getElementById('card-title')
-var questionEl = document.getElementById('title-container')
-var optionChoices = document.getElementById('.btn-choices')
-var questionEl = document.getElementById('.question')
+var startTitle = document.getElementById('card-title')
 
-startButton.addEventListener('click', startGame)
 
-function startGame() {
+startButton.addEventListener('click', startQuiz)
+questionEl.classList.add('hide')
+answerButtonsEl.classList.add('hide')
+
+var shuffledQuestions = 0;
+var currentQuestionIndex = 0;
+
+function startQuiz() {
   console.log('started')
   startButton.classList.add('hide')
-  answersContainerEl.classList.remove('hide')
   startPrompt.classList.add('hide')
   startTitle.classList.add('hide')
+  questionEl.classList.remove('hide')
+  answerButtonsEl.classList.remove('hide')
+  shuffledQuestions = questionList.sort(() => Math.random() - .5)
+  setNextQuestion()
   //getQuestions();
 }
 
-/*function getQuestions() {
-  questionEl
+
+function setNextQuestion() {
+  resetState()
+  showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+function showQuestion(questions) {
+  questionEl.innerText = questions.questions
+  questions.options.forEach( option => {
+    var button = document.createElement('button')
+    button.innerText = questions.options[1]
+    
+    button.classList.add('btn-style')
+    
+    button.addEventListener('click', selectAnswer)
+    answerButtonsEl.appendChild(button)
+  })
+}
+
+function resetState() {
+  while (answerButtonsEl.firstChild) {
+    answerButtonsEl.removeChild
+    (answerButtonsEl.firstChild)
+  }
+}
+function selectAnswer() {
+
+}
 
 /*for (i = 0; i < optionChoices.length; i++) {
   optionChoices[i].set
@@ -76,7 +108,7 @@ function startGame() {
 for (i = 0; i < optionChoices.length; i++) {
   optionChoices[i].textContent = questionList[questionNumber].answer[i];
 }
-  questionEl.textContent = questionList[questionNumber].questions;
+  questionEl.textContent = questionList[questionNumber].question;
   questionNumber++;
 
 

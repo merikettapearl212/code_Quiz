@@ -28,7 +28,7 @@ h2 {
   max-width: 700px;
   padding: 10px;
 }
-#card-title, .question-choice {
+#card-title {
   font-size: 30px;
   text-align: center;
 }
@@ -39,6 +39,14 @@ h2 {
 }
 .card-start {
   text-align: center;
+}
+
+#question {
+  font-size: 40px;
+  text-align: center;
+  padding: 20px;
+  padding-top: 0px;
+  font-weight: bold;
 }
 
 .btn-grid {
