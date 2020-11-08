@@ -81,9 +81,9 @@ function setNextQuestion() {
 
 function showQuestion(questions) {
   questionEl.innerText = questions.questions
-  questions.options.forEach( option => {
+  questions.options.forEach(answer => {
     var button = document.createElement('button')
-    button.innerText = questions.options[1]
+    button.innerText = questions.options[Math.floor(Math.random() * questions.options.length) +1]
     
     button.classList.add('btn-style')
     
