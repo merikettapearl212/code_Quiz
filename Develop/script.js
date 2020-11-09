@@ -21,8 +21,8 @@ function setTime() {
 //When Start Quiz button is clicked, timer starts
 document.getElementById("start-quiz").addEventListener("click", setTime);
 
-var questionVar = 0;
-
+var questionIndex = 0;
+var optionAnswers = 0;
 //Array of questions and options 
 let questionList = [
   {
@@ -52,6 +52,7 @@ var startPrompt = document.getElementById('start-instructions')
 var startTitle = document.getElementById('card-title')
 var questionEl = document.getElementById('question')
 var answerButtonsEl = document.getElementById('answer-buttons')
+var optionButtons = document.getElementById('btn-choices')
 
 startButton.addEventListener('click', startQuiz)
 questionEl.classList.add('hide')
@@ -69,20 +70,27 @@ function startQuiz() {
   startTitle.classList.add('hide')
   questionEl.classList.remove('hide')
   answerButtonsEl.classList.remove('hide')
-  //shuffledQuestions = questionList.sort(() => Math.random() - .5)
+  
   //setNextQuestion()
   //getQuestions();
-  render()
-  
+  showQuestions()
+ 
 }
 
 //Ask Questions
-function render() {
+function showQuestions() {
 //Present Questions 
-  questionEl.innerHTML = questionList[questionVar].questions;
-//Questions at random??
-//Present 4 potential answers
+  var currentQuestion = questionList[questionIndex];
+  questionEl.textContent = currentQuestion.questions;
+  //Present 4 potential answers
+  
+  
 }
+  
+
+//Questions at random??
+
+
 /*function setNextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
