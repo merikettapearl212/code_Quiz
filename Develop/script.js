@@ -63,13 +63,14 @@ var beginQuestions = function() {
   startingContainer.style.display = "none";
   questionContainer.style.display = "block";
   quizQuestionEl.innerHTML = questionList[questionIndex]["questions"];
-
+}
+for (var i = 0; i < 4; i++) {
   var button = document.createElement('button');
-  button.innerHTML = questionList[questionIndex]["options"];
+  button.innerHTML = questionList[questionIndex].options[i];
 
   button.classList.add('btn-style')
   answerButtonsEl.appendChild(button);
-  
+
 }
 
 startButton.addEventListener('click', beginQuestions)
