@@ -3,40 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Quiz</title>
+    <title>Coding Quiz</title>
     <link rel="stylesheet" href="./Develop/style.css" />
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <a href="#" class="highScore">View Highscores</a>
-            <div id="timer">Time: 75</div>
-        </header>
-        <div class="card-body">
-          <div id="card-title">
-            <h2>Coding Quiz Challenge!</h2>
+    <div class="header">
+      <a href="#" class="highScore">View Highscores</a>
+        <div id="timer">Time: 75</div>
+    </div>
+    <div class="main">
+      <div class="main-container" id="starting-container">
+        <h1 id="welcome">Coding Quiz Challenge!</h1>
+        <p class="information">
+          Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score-time by ten seconds!</p>
+          <div class="buttons">
+            <button class="btn-style" id="start-quiz">Start Quiz</button>
           </div>
-          <div class="instructions-container">
-          <div id="start-instructions">
-                Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score-time by ten seconds!
-            </div>
-          </div>
-          <div class="card-start">
-            <button id="start-quiz" class="btn-style">Start Quiz</button>
-          </div>
+      </div>
 
-          <div class="question-container">
-            <div id="question">Question</div>
-              <div id="answer-buttons" class="btn-grid">
-                <button class="btn-style" class="btn-choices"></button>
-                <button class="btn-style" class="btn-choices"></button>
-                <button class="btn-style" class="btn-choices"></button>
-                <button class="btn-style" class="btn-choices"></button>
-              </div>
+    <div class="main-container" id="question-container">
+      
+        <h1 id="quiz-question">Question</h1>
+      
+        <div id="answer-buttons"></div>
+    </div>
+    
+
+    <div class="main-container" id="all-done-container">
+      <div>
+        <h1>All Done!</h1>
+            <p id="final-score-p"></p>
+            <div class="form-inline">
+                <label for="initials">Enter initials:</label>
+                <input type="text" class="form-control form-control-sm" id="initials" aria-describedby="enter initials">
+                <button type="button" class="btn-style" id="submit-highscore">Submit</button>
             </div>
         </div>
+
+        <div class="main-container" id="highscores-container">
+          <h1>Highscores</h1>
+          <ol id="highscores-list">
+
+          </ol>
+          <button type="button" class="btn-style" id="go-back">Go Back</button>
+          <button type="button" class="btn-style" id="clear-highscores">Clear Highscores</button>
       </div>
+    </div>
+  </div>
+        
     <script src="./Develop/script.js"></script>
 </body>
 </html>

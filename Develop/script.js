@@ -1,29 +1,23 @@
 
-//document.getElementById(".btn").appendchild(answerBtn)?
-
-// Set time variables
-var secondsLeft = 75;
-
+// Grabbing elements
 var timerEl = document.getElementById("timer");
+var startButton = document.getElementById("start-quiz");
+var startingContainer = document.getElementById("starting-container");
+var questionContainer = document.getElementById("question-container");
+var allDone = document.getElementById("all-done-container");
+var quizQuestionEl = document.getElementById('quiz-question')
+var answerButtonsEl = document.getElementById('answer-buttons')
 
-// Set time function
-function setTime() {
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timerEl.textContent = "Time: " + secondsLeft;
+//Hide containers 
+questionContainer.style.display = "none";
+allDone.style.display = "none";
 
-    if (secondsLeft === 0) {
-      clearInterval(timerInterval);
-    }
-  }, 1000);
-  
-}
+
 //When Start Quiz button is clicked, timer starts
 document.getElementById("start-quiz").addEventListener("click", setTime);
 
-var questionIndex = 0;
-var optionAnswers = 0;
-//Array of questions and options 
+
+//Array of questions and answers
 let questionList = [
   {
   questions: "Inside which HTML element do we put the JavaScript?",
@@ -47,21 +41,62 @@ let questionList = [
 }
 ]
 
+// Declare global variables
+var secondsLeft = 75;
+var questionIndex = 0;
+
+// Set time function
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timerEl.textContent = "Time: " + secondsLeft;
+
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+  beginQuestions()
+}
+
+var beginQuestions = function() {
+  Event.preventDefault;
+  startingContainer.style.display = "none";
+  questionContainer.style.display = "block";
+  quizQuestionEl.innerHTML = questionList[questionIndex]["questions"];
+
+  var button = document.createElement('button');
+  button.innerHTML = ;
+
+  button.classList.add('btn-style')
+  answerButtonsEl.appendChild(button);
+  /*if (i >= questionList.length - 1) {
+    endGame();
+  }*/
+
+}
+
+startButton.addEventListener('click', beginQuestions)
+
+
+
+
+
+/*var questionIndex = 0;
+
+
+
 var startButton = document.getElementById('start-quiz')
 var startPrompt = document.getElementById('start-instructions')
 var startTitle = document.getElementById('card-title')
 var questionEl = document.getElementById('question')
 var answerButtonsEl = document.getElementById('answer-buttons')
-var optionButtons = document.getElementById('btn-choices')
+
+
 
 startButton.addEventListener('click', startQuiz)
 questionEl.classList.add('hide')
 answerButtonsEl.classList.add('hide')
 
-
-
-//var shuffledQuestions = 0;
-//var currentQuestionIndex = 0;
 
 function startQuiz() {
   console.log('started')
@@ -70,9 +105,7 @@ function startQuiz() {
   startTitle.classList.add('hide')
   questionEl.classList.remove('hide')
   answerButtonsEl.classList.remove('hide')
-  
-  //setNextQuestion()
-  //getQuestions();
+
   showQuestions()
  
 }
@@ -83,10 +116,11 @@ function showQuestions() {
   var currentQuestion = questionList[questionIndex];
   questionEl.textContent = currentQuestion.questions;
   //Present 4 potential answers
-  
-  
+   
 }
-  
+//console.log(showQuestions)
+
+
 
 //Questions at random??
 
