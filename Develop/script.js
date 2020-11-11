@@ -65,19 +65,20 @@ var beginQuestions = function() {
   quizQuestionEl.innerHTML = questionList[questionIndex]["questions"];
 
   var button = document.createElement('button');
-  button.innerHTML = ;
+  button.innerHTML = questionList[questionIndex]["options"];
 
   button.classList.add('btn-style')
   answerButtonsEl.appendChild(button);
-  /*if (i >= questionList.length - 1) {
-    endGame();
-  }*/
-
+  
 }
 
 startButton.addEventListener('click', beginQuestions)
 
 
+
+/*if (i >= questionList.length - 1) {
+    endGame();
+  }*/
 
 
 
