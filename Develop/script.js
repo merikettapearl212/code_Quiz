@@ -7,10 +7,16 @@ var questionContainer = document.getElementById("question-container");
 var allDone = document.getElementById("all-done-container");
 var quizQuestionEl = document.getElementById('quiz-question')
 var answerButtonsEl = document.getElementById('answer-buttons')
+var correctEl = document.getElementById('correct');
+var wrongEl = document.getElementById('wrong');
+
 
 //Hide containers 
 questionContainer.style.display = "none";
 allDone.style.display = "none";
+correctEl.style.display = "none";
+wrongEl.style.display = "none";
+
 
 
 //When Start Quiz button is clicked, timer starts
@@ -21,7 +27,7 @@ document.getElementById("start-quiz").addEventListener("click", setTime);
 let questionList = [
   {
   questions: "Inside which HTML element do we put the JavaScript?",
-    options: ["<script>", "<javascript>", "<js>", "<scripting>"],
+    options: ["&lt;script&gt;", "&lt;javascript&gt;", "&lt;js&gt;", "&lt;scripting&gt;"],
     answer: 1
 },
 {
@@ -44,6 +50,8 @@ let questionList = [
 // Declare global variables
 var secondsLeft = 75;
 var questionIndex = 0;
+var correctAnswers = 0;
+var incorrectAnswers = 0;
 
 // Set time function
 function setTime() {
@@ -63,17 +71,38 @@ var beginQuestions = function() {
   startingContainer.style.display = "none";
   questionContainer.style.display = "block";
   quizQuestionEl.innerHTML = questionList[questionIndex]["questions"];
+
+  for (var i = 0; i < 4; i++) {
+    var button = document.createElement('button');
+    button.innerHTML = questionList[questionIndex].options[i];
+  //console.log(questionList[questionIndex].options[i])
+    button.classList.add('btn-style')
+    button.setAttribute("options-index", i)
+    answerButtonsEl.appendChild(button);
+    button.addEventListener('click', checkAnswer);
+  }
 }
-for (var i = 0; i < 4; i++) {
-  var button = document.createElement('button');
-  button.innerHTML = questionList[questionIndex].options[i];
 
-  button.classList.add('btn-style')
-  answerButtonsEl.appendChild(button);
-
+/*function checkAnswer(event) {
+  console.log(event)
+  //if answer is correct then increment var correctAnswers 
+  var answer = event.target.
+  if (answer === questionList[questionIndex].answer) {//then
+    correctAnswers++ //increment or decrement --
+    correctEl.style.display = "block";
+    
+  }
+  //if answer is correct then show correct message element/ create elements one for correct message + wrong message
+  //5 sec timer for message before moving to next question 
 }
 
-startButton.addEventListener('click', beginQuestions)
+//Correct answer 
+//log in local storage 
+//display right! message 
+//then move to next question
+
+
+
 
 
 
