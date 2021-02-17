@@ -24,15 +24,19 @@ a {
 
 #starting-container {
   text-align: center;
+  margin: auto;
+  width: 45%;
+  font-size: 20px;
 }
 
 .btn-style {
+  justify-content: center;
   border: none;
   background-color: purple;
   border-radius: 25px;
   color: white;
   font-size: 20px;
-  margin: 8px;
+  margin: 10px;
   padding: 10px;
   cursor: pointer;
   outline: none;
