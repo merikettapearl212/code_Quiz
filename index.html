@@ -9,7 +9,7 @@
 
 <body>
     <header>
-      <a href="#" class="highScore">View Highscores</a>
+      <a href="#" class="view-highscore">View Highscores</a>
         <div id="timer">Time: 75</div>
     </header>
     <main>
@@ -23,23 +23,23 @@
       </main>
 <!-- question container -->
     <div class="main-container" id="question-container">
-        <div id="quiz-question">Question</div>
-          <div id="answer-buttons">
-            <!-- <button  class="btn-style"></button> -->
-            <!-- <div id="correct">Correct!</div>
-            <div id="wrong">Wrong!</div> -->
-        </div>
+        <h2 id="quiz-question">Question</h2>
+          <div id="answer-buttons"></div>
+          <div id="hr-spot"></div>
+            <div id="alert-right-wrong" class="correctEl-style"></div>
+        
     </div>
     
 <!-- all done container -->
     <div class="main-container" id="all-done-container">
         <h1>All Done!</h1>
+          <div id="amount-r-w"></div>
             <p id="final-score-p"></p>
-            <div class="form-inline">
+            <form id="add-initials" class="form-inline">
                 <label for="initials">Enter initials:</label>
-                <input type="text" class="form-control form-control-sm" id="initials" aria-describedby="enter initials">
-                <button type="button" class="btn-style" id="submit-highscore">Submit</button>
-            </div>
+                <input type="text" class="form-control form-control-sm" id="initials" required>
+                <button type="submit" class="btn-style">Submit</button>
+            </form>
         </div>
 <!-- high scores container -->
         <div class="main-container" id="highscores-container">
@@ -47,7 +47,7 @@
             <ol id="highscores-list">
 
             </ol>
-          <button type="button" class="btn-style" id="go-back">Go Back</button>
+          <button class="btn-style" id="go-back">Go Back</button>
           <button type="button" class="btn-style" id="clear-highscores">Clear Highscores</button>
       </div>
   </div>

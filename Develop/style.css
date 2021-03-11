@@ -42,3 +42,8 @@ a {
   outline: none;
 
 }
+
+.correctEl-style, #hr-spot {
+  color: grey;
+  font-style: italic;
+}
