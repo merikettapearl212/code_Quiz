@@ -23,7 +23,7 @@ A timed coding quiz with multiple-choice questions. When questions are answered 
 
 
 #### Below shows the functionality of the application with a gif :movie_camera:
-![Code Quiz](assets/images/Coding Quiz.gif)
+![Code Quiz](src/assets/images/Coding-Quiz.gif)
 
 
 ## Links
