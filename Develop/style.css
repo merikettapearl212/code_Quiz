@@ -1,15 +1,32 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  
+
+html {
+  min-height: 100%;
+  background: linear-gradient(#fe958f ,#feb884);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
+body {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  letter-spacing: 2px; 
+
+}
 .header {
   padding: 10px;
   
 }
 a {
   text-decoration: none;
+  color: white;
 }
+
+a:hover {
+  color: #3fb294;
+}
+
 
 .main-container {
   margin: auto;
@@ -32,9 +49,9 @@ a {
 .btn-style {
   justify-content: center;
   border: none;
-  background-color: purple;
+  background-color: #ffe1d7;
   border-radius: 25px;
-  color: white;
+  color: grey;
   font-size: 20px;
   margin: 8px;
   padding: 9px;
@@ -45,11 +62,20 @@ a {
 .correctEl-style, #hr-spot {
   color: grey;
   font-style: italic;
+  border-color: none;
 }
 
 #score-spot {
   font-size: 60px;
-  color: purple;
+  color: #3fb294;
   padding-bottom: 1.5rem;
   /* text-align: center; */
 }
+
+hr {
+    border: none;
+    background-color: grey;
+    color: grey;
+    height: 1px;
+}
+
