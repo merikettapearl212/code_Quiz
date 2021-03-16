@@ -7,7 +7,9 @@ var quizQuestionEl = document.getElementById("quiz-question");
 var answerButtonsEl = document.getElementById("answer-buttons");
 var rightWrongEl = document.getElementById("alert-right-wrong");
 var highScores = document.getElementById("highscores-container");
+var highscoresListEl = document.getElementById("highscores-list")
 var goBacktoStart = document.getElementById("go-back");
+
 
 //Hide containers
 questionContainer.style.display = "none";
@@ -50,18 +52,31 @@ let questionList = [
 
 // Declare global variables
 var secondsLeft = 75;
+var currentIndex = 0;
+var correctAnswers = 0;
+var wrongAnswers = 0;
+// var subtractTimeScore = 10;
 
 // Set time function
+let timerInterval
+var score = 0
+
 function setTime() {
-  var timerInterval = setInterval(function () {
+   timerInterval = setInterval(function () {
     secondsLeft--;
-    timerEl.textContent = "Time: " + secondsLeft;
+    
 
-    if (secondsLeft === 0) {
+    if (secondsLeft <= 0) {
       clearInterval(timerInterval);
-    }
-  }, 1000);
 
+        questionContainer.style.display = "none";
+        allDone.style.display = "block";
+        document.getElementById("amount-r-w").innerHTML = `You got ${correctAnswers} correct! and ${wrongAnswers} wrong!`;
+        document.getElementById("score-spot").innerHTML = `Score: ${score + secondsLeft}`;
+        secondsLeft = 0;
+    }
+    timerEl.textContent = "Time: " + secondsLeft;
+  }, 1000);
 }
 
 //When Start Quiz button is clicked, timer starts
@@ -71,13 +86,10 @@ document.getElementById("start-quiz").addEventListener("click", function () {
   // console.log(questionList[0].question)
 
   showQuestion();
-  setTime()
+  setTime();
   // console.log(questionList[0].options[0])
 });
 
-var currentIndex = 0;
-var correctAnswers = 0;
-var wrongAnswers = 0;
 
 function showQuestion() {
   console.log(currentIndex);
@@ -87,10 +99,11 @@ function showQuestion() {
     // alert("Game Over!")
     questionContainer.style.display = "none";
     allDone.style.display = "block";
-    document.getElementById(
-      "amount-r-w"
-    ).innerHTML = `You got ${correctAnswers} correct! and ${wrongAnswers} wrong!`;
+    
+    document.getElementById("amount-r-w").innerHTML = `You got ${correctAnswers} correct! and ${wrongAnswers} wrong!`;
+    document.getElementById("score-spot").innerHTML = `Score: ${score + secondsLeft}`;
     // alert (`You got ${correctAnswers} correct! You got ${wrongAnswers} wrong!`)
+    clearInterval(timerInterval);
     return;
   }
 
@@ -116,6 +129,8 @@ function showQuestion() {
         // console.log("Wrong!")
         wrongAnswers++;
         rightWrongEl.textContent = "Wrong!";
+        secondsLeft -= 10;
+        // secondsLeft = secondsLeft -10;
         // alert("wrong!")
       }
       currentIndex++;
@@ -136,38 +151,22 @@ function showQuestion() {
     questionList[currentIndex].question;
 }
 
-// Local storage
-document
-  .querySelector("#add-initials")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    var initials = document.querySelector("#initials").value;
-    var score = correctAnswers;
-    console.log(initials, score);
-    var finalScoreLocal = [];
 
-    if (localStorage.getItem("initials")) {
-      var finalScoreLocal = JSON.parse(localStorage.getItem("initials"));
-    }
-
-    finalScoreLocal.push({
-      initials: initials,
-      score: score,
-    });
-    localStorage.setItem("initials", JSON.stringify(finalScoreLocal));
-  });
-
-document
-  .querySelector(".view-highscore")
-  .addEventListener("click", function () {
+document.querySelector(".view-highscore").addEventListener("click", function () {
     allDone.style.display = "none";
     questionContainer.style.display = "none";
     startingContainer.style.display = "none";
+    timerEl.style.display = "none";
     highScores.style.display = "block";
 
     var finalScoreLocal = JSON.parse(localStorage.getItem("initials"));
     console.log(finalScoreLocal);
 
+    finalScoreLocal = finalScoreLocal.sort((a, b) =>{
+      return b.score - a.score
+    }) 
+
+    document.querySelector("#highscores-list").innerHTML = "";
     for (let i = 0; i < finalScoreLocal.length; i++) {
       var highscoreEl = document.createElement("li");
       highscoreEl.innerText = `${finalScoreLocal[i].initials} - ${finalScoreLocal[i].score}`;
@@ -175,11 +174,55 @@ document
       document.querySelector("#highscores-list").appendChild(highscoreEl);
     }
 
-    
   });
 
+  // Local storage
+document.querySelector("#add-initials").addEventListener("submit", function (event) {
+  event.preventDefault();
+  var initials = document.querySelector("#initials").value;
+ score = correctAnswers;
+  console.log(initials, score);
+  var finalScoreLocal = [];
+  
+  if (localStorage.getItem("initials")) {
+    var finalScoreLocal = JSON.parse(localStorage.getItem("initials"));
+  }
+  console.log(score)
+  console.log(secondsLeft)
+    finalScoreLocal.push({
+      initials: initials,
+      score: score + secondsLeft,
+  });
+  localStorage.setItem("initials", JSON.stringify(finalScoreLocal));
 
-  // need to figure out how to get back to start page without this?
-  goBacktoStart.onclick = ()=>{
-    window.location.reload(); //reload the current window
-}
+  finalScoreLocal = finalScoreLocal.sort((a, b) =>{
+    return b.score - a.score
+  }) 
+  
+
+  
+  allDone.style.display = "none";
+  highScores.style.display = "block";
+  document.querySelector("#highscores-list").innerHTML = "";
+    for (let i = 0; i < finalScoreLocal.length; i++) {
+      var highscoreEl = document.createElement("li");
+      highscoreEl.innerText = `${finalScoreLocal[i].initials} - ${finalScoreLocal[i].score}`;
+      console.log(highscoreEl);
+      document.querySelector("#highscores-list").appendChild(highscoreEl);
+    }
+ 
+});
+  
+
+
+// need to figure out how to get back to start page without this?
+goBacktoStart.onclick = () => {
+  window.location.reload(); //reload the current window
+};
+
+document.querySelector("#clear-highscores").addEventListener("click", function (){
+  highscoresListEl.style.display = "none";
+  localStorage.clear();
+  
+})
+
